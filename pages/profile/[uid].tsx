@@ -13,7 +13,7 @@ const MyPage = () => {
   const [userInfo, setUserInfo] = useState<TUserInfo>();
   const [storageCurrentUser, setStorageCurrentUser] = useState<User>();
   const [isOwner, setIsOwner] = useState({});
-  const [imgPreview, setImgPreview] = useState<StaticImageData | string>();
+  const [imgPreview, setImgPreview] = useState<string>();
   const [isLoading, setIsLoading] = useState(true);
 
   const router = useRouter();
@@ -57,7 +57,7 @@ const MyPage = () => {
 
   const getUserProfileImg = (userImg: string | undefined) => {
     if (userImg === "null") {
-      return setImgPreview(defaultImg);
+      return setImgPreview(defaultImg as unknown as string);
     }
     setImgPreview(userImg);
   };
@@ -71,14 +71,9 @@ const MyPage = () => {
       <div className="bg-coverBg bg-cover bg-center h-[200px] sm:h-[250px] bg-no-repeat relative">
         <div className="flex justify-center items-center space-x-4 sm:space-x-8 absolute sm:left-[28%] left-[20%] sm:top-[120px] top-1/3 text-white">
           {imgPreview && (
-            <Image
+            <img
               src={imgPreview}
               className="w-[100px] h-[100px] rounded-md aspect-square  mx-auto sm:mx-0"
-              loader={({ src }) => src}
-              unoptimized
-              priority={true}
-              width={100}
-              height={100}
               alt="프로필이미지"
             />
           )}
