@@ -67,13 +67,9 @@ const MyBookmarkTab = ({
                   location.href = `/detailRecipe/${p.postId}`;
                 }}
               >
-                <Image
+                <img
                   className="w-[180px] h-[135px] object-cover aspect-[4/3] rounded-md cursor-pointer"
                   src={p.thumbnail}
-                  priority={true}
-                  loader={({ src }) => src}
-                  width={180}
-                  height={135}
                   alt="bookmark-thumbnail"
                 />
               </div>
