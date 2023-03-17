@@ -12,29 +12,15 @@ const Post = ({ writerUid }: TBookmark) => {
   return (
     <>
       {writerImg === "null" ? (
-        <Image
+        <img
           className="aspect-square rounded-md object-cover w-12 h-12"
-          src={defaultImg}
-          // priority={true}
-          sizes="(max-width: 768px) 100vw,
-          (max-width: 1200px) 50vw,
-          33vw"
-          loader={({ src }) => src}
-          width={12}
-          height={12}
+          src={defaultImg as unknown as string}
           alt="글쓴이프로필"
         />
       ) : (
-        <Image
+        <img
           className="aspect-square rounded-md object-cover w-12 h-12"
           src={writerImg}
-          // priority={true}
-          sizes="(max-width: 768px) 100vw,
-          (max-width: 1200px) 50vw,
-          33vw"
-          loader={({ src }) => src}
-          width={12}
-          height={12}
           alt="글쓴이프로필"
         />
       )}
