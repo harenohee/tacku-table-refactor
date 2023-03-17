@@ -30,7 +30,7 @@ const Post = ({ post }: PostProp) => {
       <Link legacyBehavior href={`/community/${post.id}`}>
         {post.thumbnail === "" ? (
           <Image
-            className="object-cover object-center aspect-[4/3] rounded-md cursor-pointer"
+            className="object-cover object-center aspect-[4/3] rounded-md cursor-pointer w-7/4"
             src={defaultImg}
             placeholder="blur"
             width={70}
@@ -39,7 +39,7 @@ const Post = ({ post }: PostProp) => {
           />
         ) : (
           <Image
-            className="object-cover object-center aspect-[4/3] rounded-md cursor-pointer"
+            className="object-cover object-center aspect-[4/3] rounded-md cursor-pointer w-7/4"
             src={post?.thumbnail as string}
             loader={({ src }) => src}
             width={70}
