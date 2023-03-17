@@ -12,21 +12,17 @@ const Post = ({ writerUid }: TBookmark) => {
   return (
     <>
       {writerImg === "null" ? (
-        <Image
+        <img
           className="aspect-square rounded-md object-cover w-12 h-12"
-          src={defaultImg}
-          priority={true}
-          loader={({ src }) => src}
+          src={defaultImg as unknown as string}
           width={12}
           height={12}
           alt="글쓴이프로필"
         />
       ) : (
-        <Image
+        <img
           className="aspect-square rounded-md object-cover w-12 h-12"
           src={writerImg}
-          priority={true}
-          loader={({ src }) => src}
           width={12}
           height={12}
           alt="글쓴이프로필"
