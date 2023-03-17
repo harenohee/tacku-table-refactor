@@ -71,9 +71,17 @@ const MyPage = () => {
       <div className="bg-coverBg bg-cover bg-center h-[200px] sm:h-[250px] bg-no-repeat relative">
         <div className="flex justify-center items-center space-x-4 sm:space-x-8 absolute sm:left-[28%] left-[20%] sm:top-[120px] top-1/3 text-white">
           {imgPreview && (
-            <img
+            <Image
               src={imgPreview}
               className="w-[100px] h-[100px] rounded-md aspect-square  mx-auto sm:mx-0"
+              loader={({ src }) => src}
+              sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
+              // unoptimized
+              // priority={true}
+              width={100}
+              height={100}
               alt="프로필이미지"
             />
           )}

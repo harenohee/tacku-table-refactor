@@ -29,15 +29,21 @@ const Post = ({ post }: PostProp) => {
     <div className="border-b border-mono60 py-4 px-5 flex text-sm h-[85px] sm:h-auto">
       <Link legacyBehavior href={`/community/${post.id}`}>
         {post.thumbnail === "" ? (
-          <img
+          <Image
             className="object-cover object-center aspect-[4/3] rounded-md cursor-pointer w-7/4"
-            src={defaultImg as unknown as string}
+            src={defaultImg}
+            placeholder="blur"
+            width={70}
+            height={41}
             alt="community-thumbnail-default"
           />
         ) : (
-          <img
+          <Image
             className="object-cover object-center aspect-[4/3] rounded-md cursor-pointer w-7/4"
             src={post?.thumbnail as string}
+            loader={({ src }) => src}
+            width={70}
+            height={41}
             alt="community-thumbnail"
           />
         )}
