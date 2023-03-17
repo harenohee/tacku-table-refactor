@@ -13,7 +13,7 @@ const MyPage = () => {
   const [userInfo, setUserInfo] = useState<TUserInfo>();
   const [storageCurrentUser, setStorageCurrentUser] = useState<User>();
   const [isOwner, setIsOwner] = useState({});
-  const [imgPreview, setImgPreview] = useState<StaticImageData | string>();
+  const [imgPreview, setImgPreview] = useState<string>();
   const [isLoading, setIsLoading] = useState(true);
 
   const router = useRouter();
@@ -57,7 +57,7 @@ const MyPage = () => {
 
   const getUserProfileImg = (userImg: string | undefined) => {
     if (userImg === "null") {
-      return setImgPreview(defaultImg);
+      return setImgPreview(defaultImg as unknown as string);
     }
     setImgPreview(userImg);
   };
