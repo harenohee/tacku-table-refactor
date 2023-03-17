@@ -24,9 +24,16 @@ const RecipeTab = ({ userInfo }: MyTabProp) => {
           <hr className="border-mono50 mx-8 my-6 border-[1px]" />
           <div className="space-x-4 sm:space-x-[20px] items-center flex">
             <Link legacyBehavior href={`/detailRecipe/${p.postId}`}>
-              <img
+              <Image
                 className="w-[180px] h-[135px] object-cover aspect-[4/3] cursor-pointer rounded-md"
                 src={p.thumbnail}
+                // priority={true}
+                sizes="(max-width: 768px) 100vw,
+                (max-width: 1200px) 50vw,
+                33vw"
+                loader={({ src }) => src}
+                width={180}
+                height={135}
                 alt="bookmark-thumbnail"
               />
             </Link>
