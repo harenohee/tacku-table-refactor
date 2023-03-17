@@ -75,8 +75,11 @@ const MyPage = () => {
               src={imgPreview}
               className="w-[100px] h-[100px] rounded-md aspect-square  mx-auto sm:mx-0"
               loader={({ src }) => src}
-              unoptimized
-              priority={true}
+              sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
+              // unoptimized
+              // priority={true}
               width={100}
               height={100}
               alt="프로필이미지"

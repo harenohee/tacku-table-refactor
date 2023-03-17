@@ -70,7 +70,10 @@ const MyBookmarkTab = ({
                 <Image
                   className="w-[180px] h-[135px] object-cover aspect-[4/3] rounded-md cursor-pointer"
                   src={p.thumbnail}
-                  priority={true}
+                  sizes="(max-width: 768px) 100vw,
+                  (max-width: 1200px) 50vw,
+                  33vw"
+                  // priority={true}
                   loader={({ src }) => src}
                   width={180}
                   height={135}
