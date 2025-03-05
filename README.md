@@ -10,7 +10,7 @@
 
 ## 🍽 타쿠의 식탁 바로 보러가기 !!
 
-[홈페이지 방문하기](https://tacku-table-two.vercel.app/)
+[홈페이지 방문하기](https://tacku-table-harenohee.vercel.app/)
 
 ## 📢 타쿠의 식탁 주요 기능
 
